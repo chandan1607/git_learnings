@@ -1,4 +1,4 @@
-
+import paramiko
 def reboot_remote_server(hostname, username, key_filename):
     try:
         # Establish an SSH connection using the provided key file
@@ -17,5 +17,11 @@ def reboot_remote_server(hostname, username, key_filename):
  
     except Exception as e:
         print(f"Error: {str(e)}")
+    if __name__ == "__main__":
+    # Replace these values with your server details
+    host = 'ec2-35-153-105-220.compute-1.amazonaws.com'
+    ssh_username = 'ubuntu'
+    key_file = 'C:\\Users\\CHANDAJ\\Downloads\\ubuntu.pem'
+    reboot_remote_server(host, ssh_username, key_file)
  
 
